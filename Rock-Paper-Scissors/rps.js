@@ -1,9 +1,9 @@
-function randomNumber(min, max){
+function getRandomNumber(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
 function getComputerChoice(){
-    return randomNumber(1, 3);
+    return getRandomNumber(1, 3);
 }
 
 function getPlayerSelection(){
@@ -18,33 +18,39 @@ function getPlayerSelection(){
     
 }
 
-function compare(computerChoice, playerChoice){
-    if(computerChoice === 1){
-        if(playerChoice === 1)
-        {
-            return 'Tie';
-        }else if(playerChoice === 2){
-            return 'Player Wins';
-        }else{
-            return 'Computer Wins';
+function compareChoices(computerChoice, playerChoice){
+    
+    switch (computerChoice) {
+    case 1:
+        switch (playerChoice) {
+            case 1:
+                return 'Tie';
+            case 2:
+                return 'Player Wins';
+            default:
+                return 'Computer Wins';
         }
-    }else if(computerChoice === 2){
-        if(playerChoice === 1)
-        {
-            return 'Computer Wins';
-        }else if(playerChoice === 2){
-            return 'Tie';
-        }else{
-            return 'Player Wins';
+        break;
+
+    case 2:
+        switch (playerChoice) {
+            case 1:
+                return 'Computer Wins';
+            case 2:
+                return 'Tie';
+            default:
+                return 'Player Wins';
         }
-    }else{
-        if(playerChoice === 1)
-        {
-            return 'Player Wins';
-        }else if(playerChoice === 2){
-            return 'Computer Wins';
-        }else{
-            return 'Tie';
+        break;
+
+    default:
+        switch (playerChoice) {
+            case 1:
+                return 'Player Wins';
+            case 2:
+                return 'Computer Wins';
+            default:
+                return 'Tie';
         }
     }
 }
@@ -72,7 +78,7 @@ function game(){
 
         computerChoice = getComputerChoice();
         playerChoice = getPlayerSelection();
-        result = compare(computerChoice, playerChoice);
+        result = compareChoices(computerChoice, playerChoice);
 
         if(result === 'Tie'){
             rounds++;
