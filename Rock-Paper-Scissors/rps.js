@@ -1,28 +1,20 @@
-function randomNumber(){
-    return Math.floor(Math.random() * (3 - 1) + 1);
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 function getComputerChoice(){
-    const random = randomNumber();
-    return random;
+    return randomNumber(1, 3);
 }
 
 function getPlayerSelection(){
     const player_selection = prompt('Rock, paper or scissors: ');
-    let playerSelection;
 
-    if(player_selection === 'Rock' || player_selection === 'rock' || player_selection === 'ROCK' || player_selection === 'RocK'){
-        playerSelection = 1;
-        return playerSelection;
-    }
-    else if(player_selection === 'Paper' || player_selection === 'paper' || player_selection === 'PAPER'){
-        playerSelection = 2;
-        return playerSelection;
-    }
-    else if( player_selection === 'Scissors' || player_selection === 'scissors' || player_selection === 'SCISSORS'){
-        playerSelection = 3;
-        return playerSelection;
-    }
+    if(player_selection === 'Rock' || player_selection === 'rock' || player_selection === 'ROCK' || player_selection === 'RocK')
+        return 1;
+    else if(player_selection === 'Paper' || player_selection === 'paper' || player_selection === 'PAPER')
+        return 2;
+    else if( player_selection === 'Scissors' || player_selection === 'scissors' || player_selection === 'SCISSORS')
+        return 3;
     
 }
 
@@ -83,22 +75,18 @@ function game(){
         result = compare(computerChoice, playerChoice);
 
         if(result === 'Tie'){
-            i--;
+            rounds++;
+            remaining_rounds++;
         }else if(result === 'Player Wins'){
             playerScore++;
         }else{
             computerScore++;
         }
 
-        alert(`${result} -> You ${playerChoice} x ${computerChoice} Computer \nScore: You ${playerScore} - ${computerScore} Computer`);
+        console.log(`${result} -> You ${playerChoice} x ${computerChoice} Computer \nScore: You ${playerScore} - ${computerScore} Computer`);
 
         remaining_rounds--;
     }
-
-    if(playerScore > computerScore)
-        alert('You win!');
-    else
-        alert('You lose!');
 }
 
 game();
