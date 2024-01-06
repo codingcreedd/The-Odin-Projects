@@ -5,6 +5,8 @@ let gameMode = 'none';
 let getRounds;
 let end = false;
 
+document.querySelector('.player-name').textContent = `${localStorage.getItem('username')}`;
+
 
 //BUTTONS
 const resetButton = document.querySelector('.reset-btn');
