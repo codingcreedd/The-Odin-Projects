@@ -19,9 +19,21 @@ decimalButton.addEventListener('click', () => {
     if(!currentScreenText.includes("."))
         currentScreen.innerText += '.';
 
+    if(operation_status !== 'none'){
+        num2Text += '.';
+    }
+    
 });
 
 equalsButton.addEventListener('click', () => {
+
+    if(num2Text === '' && operation_status !== 'none')
+    {
+        currentScreen.innerText = `${num1}`;
+        operation_status = 'none';
+        return;
+    }
+    
     if(operation_status !== 'none'){
         calculateResult();
         operation_status = 'none';
