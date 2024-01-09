@@ -16,14 +16,24 @@ const decimalButton = document.querySelector('.decimal-btn');
 
 decimalButton.addEventListener('click', () => {
     const currentScreenText = String(currentScreen.innerText);
-    if(!currentScreenText.includes("."))
-        currentScreen.innerText += '.';
 
-    if(operation_status !== 'none'){
+    if (operation_status === 'none' && currentScreenText.includes('.')) {
+        // If operation is none and the current screen text already has a decimal point, do nothing
+        return;
+    }
+
+    if (operation_status !== 'none' && num2Text.includes('.')) {
+        // If operation is not none and num2Text already has a decimal point, do nothing
+        return;
+    }
+
+    currentScreen.innerText += '.';
+    
+    if (operation_status !== 'none') {
         num2Text += '.';
     }
-    
 });
+
 
 equalsButton.addEventListener('click', () => {
 
