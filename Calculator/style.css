@@ -103,16 +103,13 @@ body{
     align-items: end;
 }
 
-.screen .output-screen{
-    padding: 3px;
-    font-size: 19px;
-    color: rgb(148, 148, 148);
-    text-wrap: wrap;
-}
-
-.screen .current-screen{
+.calculator-container .screen .current-screen{
+    max-width: 100%;
+    height: 99%;
     margin-bottom: 20px;
     color: white;
     font-size: 30px;
     padding: 10px;
+    word-wrap: break-word;
+    overflow-y: hidden;
 }
