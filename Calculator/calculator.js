@@ -60,6 +60,10 @@ deleteButton.addEventListener('click', () => {
     {
         clearEquation();
     }
+    else if(operation_status === 'none' && currentScreenText === '0')
+    {
+        return;
+    }
     else
     {
         if(isNumber(currentScreenText[currentScreenText.length - 1])){
