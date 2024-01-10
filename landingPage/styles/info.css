@@ -10,7 +10,7 @@
     font-size: 40px;
     color: #1f2937;
     font-weight: 900;
-    padding: 40px 0;
+    padding: 130px 0 40px 0;
 }
 
 .info-section .langs-div{
@@ -40,34 +40,37 @@
 
 .bx.bxl-html5{
     color: #e34c26 ;
+    transition: 0.5s;
+}
+
+.bx.bxl-html5:hover,
+.bx.bxl-javascript:hover,
+.bx.bxl-css3:hover,
+.bx.bxl-java:hover
+{
+    transform: translateY(-5px);
 }
 
 .bx.bxl-css3{
     color: #264de4;
+    transition: 0.5s;
 }
 
 .bx.bxl-javascript{
     color: #f0db4f ;
+    transition: 0.5s;
 }
 
 .bx.bxl-java{
     color: #f89820 ;
+    transition: 0.5s;
 }
+
 
 .langs-info p{
     font-size: 25px;
     padding: 0;
     font-weight: 400;
-}
-
-.info-section span{
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 100%;
-    background: #1f2937;
-    height:120px;  
-    clip-path: polygon(0 0, 0% 20%, 0 20%, 0 29%, 30% 0, 48% 0, 69% 0, 100% 29%, 100% 27%, 100% 28%, 100% 0, 46% 0); 
 }
 
 /*quote section*/
